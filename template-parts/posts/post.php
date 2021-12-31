@@ -21,19 +21,19 @@
 
         <!-- Category Showing -->
         <a >
-            <?php 
-            $categories = get_the_category();
-            $separator = ', ';
-            $result ='';
+        <?php 
+        $categories = get_the_category();
+        $separator = ', ';
+        $result ='';
 
-            if ($categories){
-                foreach($categories as $category){
-                    $result .= '<a href ="' .get_category_link($category ->term_id) . '" class="categorie">' . $category->cat_name . '</a>' . $separator;
-                }
-                echo trim ($result, $separator);
+        if ($categories){
+            foreach($categories as $category){
+                $result .= '<a href ="' .get_category_link($category ->term_id) . '" class="categorie">' . $category->cat_name . '</a>' . $separator;
             }
+            echo trim ($result, $separator);
+        }
 
-            ?>
+        ?>
         </a>     
     
         <h5><a href="<?php the_permalink() ?>"><?php the_title() ?></a> </h5>

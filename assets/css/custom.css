@@ -37,3 +37,32 @@
 .post-single-info .list-inline {
     margin-left: 0;
 }
+
+span.page-numbers.current {
+    color: white;
+    background-color:#f67280 ;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 8px;
+    line-height: 35px;
+    display: inline-block;
+}
+.pagination .nav-links a.page-numbers {
+    color: #f67280;;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 8px;
+    line-height: 35px;
+    display: inline-block;
+    border: 1px solid #f67280;
+
+}
+.custom-pagination-style {
+    display: flex;
+    justify-content: center;
+}
+

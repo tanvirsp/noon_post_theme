@@ -73,11 +73,15 @@ get_header();
 					?>
 				</div>
 
-				
 				<div class="post-single-footer">
+					<!--Post Tags -->
 					<div class="tags">
-					<?php get_the_tag_list() ?>
+						<?php 
+							echo get_the_tag_list('<ul class="list-inline"><li>', '</li><li>', '</li></ul>' ) 
+						?>
 					</div>
+					
+					<!-- Social Sharing Icon -->
 					<div class="social-media">
 						<ul class="list-inline">
 							<li>
@@ -111,13 +115,9 @@ get_header();
 			</div> <!--/-->
 
 			<?php
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'noonpost' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'noonpost' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+			get_template_part('template-parts/post-nagivation');
 
+			
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();

@@ -38,10 +38,31 @@ $comment_cancel = 'Cancel Reply';
 ?>
 <div class="widget mb-50">
 	<div class="title">
-		<h5>3 Comments</h5>
+		<?php 
+		if(get_comments_number()){
+			?>
+			<h5><?php echo get_comments_number($post->ID) ?> Comments</h5>
+			<?php
+		} else{
+			echo"No Comments";
+		}
+		?>
 	</div>
 	<ul class="widget-comments">
-		<?php wp_list_comments( 'type=comment&callback=mytheme_comment' ); ?>
+		<?php wp_list_comments(
+			$args = array(
+				'walker'            => null,
+				'max_depth'         => '',
+				'style'             => 'li -> ',
+				'callback'          => null,
+				'end-callback'      => null,
+				'type'              => 'all',
+				'page'              => '',
+				'per_page'          => '',
+				'avatar_size'       => 64,
+				
+			)
+		); ?>
 	</ul>
 
 
@@ -69,11 +90,7 @@ $comment_cancel = 'Cancel Reply';
 				</div>
 			</div></div>',
 
-			//Email Field
-			// 'email' => '<p class="comment-form-email"><br /><input id="email" name="email" placeholder="' . $comment_email .'"></input></p>',
-			//URL Field
-			// 'url' => '<p class="comment-form-url"><br /><input id="url" name="url" placeholder="' . $comment_url .'"></input></p>',
-			//Cookies
+		
 			'cookies' => '<input type="checkbox" required>' . $comment_cookies_1 . '<a href="' . get_privacy_policy_url() . '">' . $comment_cookies_2 . '</a>',
 		),
 		// Change the title of send button

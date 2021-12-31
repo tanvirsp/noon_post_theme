@@ -71,7 +71,7 @@
                 <button type="button" class="close">
                     <i class="icon_close"></i>
                 </button>
-                <form class="search-form" method="GET">
+                <form class="search-form">
                     <input name="s" type="search" value="" placeholder="What are you looking for?">
                     <button type="submit" class="search-btn">search</button>
                 </form>

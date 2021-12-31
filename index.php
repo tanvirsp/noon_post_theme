@@ -35,7 +35,7 @@ get_header();
 								*/
 								get_template_part( 'template-parts/posts/post', get_post_type() );
 							endwhile;
-							the_posts_navigation();
+							
 						else :
 							get_template_part( 'template-parts/content', 'none' );
 						endif;
@@ -44,26 +44,18 @@ get_header();
                     </div>
 
                     <!--pagination-->
-                    <div class="pagination mt-30">
-                        <ul class="list-inline">
-                            <li class="active">
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="arrow_carrot-2right"></i>
-                                </a>
-                            </li>
-                        </ul> 
+                    
+                    
+
+                    <div class="pagination mt-30 custom-pagination-style">
+
+                            <?php the_posts_pagination( array(
+                                    'mid_size'  => 2,
+                                    'prev_text' => __( '<i class="arrow_carrot-2left"></i>', 'noonpost' ),
+                                    'next_text' => __( '<i class="arrow_carrot-2right"></i>', 'noonpost' ),
+                                ) ); 
+                            ?>
+                       
                     </div><!--/-->
                 </div>
 
